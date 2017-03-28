@@ -1,0 +1,20 @@
+{
+  "name": "MQTT-RPI-Example",
+  "version": "1.0.0",
+  "description": "MQTT Tutorial for Raspberry Pi",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "rasberryPi",
+    "Mqtt",
+    "Socket.io"
+  ],
+  "author": "mhamdi karim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mqtt": "^2.4.0",
+    "socket.io": "^1.7.3",
+    "wiring-pi":""
+  }
+}
