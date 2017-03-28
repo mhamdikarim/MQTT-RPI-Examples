@@ -1,4 +1,4 @@
-##MQTT est un service de messagerie TCP/IP simple
+## MQTT est un service de messagerie TCP/IP simple.
 Les messages sont envoyés par des publieurs (les publishers) sur un canal (une chaîne d’information) appelé Topic. Ces messages peuvent être lus par les souscripteurs (les subscribers) qui surveillent certains Topics.
 Un serveur (Broker) se charge de faire la liaison entre les publieurs et les souscripteurs.
 On peut évidemment installer un Broker sur notre Framboise, par exemple Mosquitto.
@@ -9,4 +9,3 @@ A la différence d’un serveur avec une base de données relationnelle qui cons
 ## On the UI front: 
 
 ## On the data-access front:
-The web application model of client/server data access — based on an always-available Internet connection — is unsuitable for mobile applications. A mobile device can be disconnected from network access for a sustained period. Endless retries can cause app stalls and user frustration. Cloudant, with mobile support currently through the JavaScript PouchDB library, solves this problem.
