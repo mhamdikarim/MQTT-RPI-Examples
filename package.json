@@ -3,19 +3,42 @@
   "version": "1.0.0",
   "description": "L’Internet des Objets (IoT) sur Raspberry Pi avec MQTT,Socket.io,wiring-pi and Nodejs",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "browserify src/index.js -g uglifyify | uglifyjs > public/bundle.js",
+    "browserify": "browserify src/index.js > public/bundle.js",
+    "test": "npm run browserify && nodemon index.js",
+    "watch": "watchify src/index.js -d -v -o public/bundle.js",
+    "start": "npm run build && node index.js"
+  },
   "keywords": [
     "rasberryPi",
     "Mqtt",
     "Socket.io",
     "wiring-pi"
   ],
+  "browser": {
+    "angular-last": "./public/vendors/angular.browserify.js"
+  },
   "author": "mhamdi karim",
   "license": "ISC",
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "chalk": "^1.0.0",
+    "eslint": "^0.22.1",
+    "finalhandler": "^0.3.6",
+    "jscs": "^1.7.3",
+    "serve-static": "^1.9.3",
+    "uglify-js": "^2.4.15",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.1.0"
+  },
   "dependencies": {
+    "angular-ui-router": "^0.4.2",
     "express": "^4.15.2",
+    "famous": "^0.7.1",
     "mqtt": "^2.4.0",
-    "socket.io": "^1.7.3",
-    "wiring-pi":""
+    "oclazyload": "^1.1.0",
+    "pouchdb": "^6.1.2",
+    "socket.io": "^1.7.3"
   }
 }

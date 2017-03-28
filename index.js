@@ -2,10 +2,10 @@ var fs = require('fs');
 var https = require('https');
 var path = require('path');
 var socketio = require('socket.io');
-var wpi = require('wiring-pi')
+
 var mqtt = require('mqtt');
 var express = require('express'); 
-var jayson = require('jayson');
+//var jayson = require('jayson');
 var options = {
   key: fs.readFileSync('./keys/server.key'),
   cert: fs.readFileSync('./keys/server.crt'),
@@ -16,7 +16,7 @@ var options = {
 var app = express();
 var client  = mqtt.connect('mqtt://192.168.1.61') 
 // Serve static assets
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'public')));
 //app.route('/').get(function(req,res,next) {res.json({name:"salem"})});
 var server = https.createServer(options,app);
 var io = socketio.listen(server);
@@ -34,10 +34,12 @@ io.on('connection', function (socket) {
   });
 });
 //client.on('connect', function () {});
+/*
+var wpi = require('wiring-pi')
 wpi.setup('wpi');
 var pin = 0;
 wpi.pinMode(0, wpi.OUTPUT);
-
+*/
 // listen to messages coming from the mqtt broker
 client.on('message', function (topic, payload, packet) {
   //client.end()
