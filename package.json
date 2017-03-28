@@ -1,13 +1,14 @@
 {
   "name": "MQTT-RPI-Example",
   "version": "1.0.0",
-  "description": "MQTT Tutorial for Raspberry Pi",
+  "description": "L’Internet des Objets (IoT) sur Raspberry Pi avec MQTT,Socket.io,wiring-pi and Nodejs",
   "main": "index.js",
   "scripts": {},
   "keywords": [
     "rasberryPi",
     "Mqtt",
-    "Socket.io"
+    "Socket.io",
+    "wiring-pi"
   ],
   "author": "mhamdi karim",
   "license": "ISC",
